@@ -82,7 +82,7 @@ export default function Annuity() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-1">
+    <div className="flex flex-col items-center min-h-screen bg-gray-100 p-6 mt-4">
       <motion.div
         className="w-full max-w-md p-6 bg-white rounded-xl shadow-md"
         initial={{ opacity: 0, y: -20 }}
@@ -96,7 +96,7 @@ export default function Annuity() {
             className="w-70 h-32 object-contain"
           />
         </div>
-        <h2 className="text-2xl font-bold text-gray-800 text-center mb-4">
+        <h2 className="text-xl font-bold text-gray-800 text-center mb-4 px-1">
           Lifetime Income Calculator
         </h2>
         <div className="space-y-4">
