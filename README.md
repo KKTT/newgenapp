@@ -6,3 +6,10 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+Add new UI Components
+`npx shadcn@latest add label`
+
+Tutorial on How to Install Shadcn UI using React, JavaScript, and Vit
+https://www.youtube.com/watch?v=ZqQ-_x7-9Z4

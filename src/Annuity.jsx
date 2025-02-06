@@ -90,7 +90,7 @@ export default function Annuity() {
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-2xl font-bold text-gray-800 text-center mb-4">
-          Annuity Income Calculator
+          Lifetime Income Calculator
         </h2>
         <div className="space-y-4">
           <div>
