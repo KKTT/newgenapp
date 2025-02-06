@@ -7,11 +7,12 @@ import { motion } from "framer-motion";
 
 export default function Annuity() {  
   const [currentAge, setCurrentAge] = useState(50);
-  const [incomeAge, setInomeAge] = useState(65);
+  const [incomeAge, setInomeAge] = useState(60);
   const [premium, setPremium] = useState(100000);
   const [income, setIncome] = useState(0);
   const [currentAgeWarning, setCurrentAgeWarning] = useState("");
   const [incomeAgeWarning, setInomeAgeWarning] = useState("");
+  const [premiumWarning, setPremiumWarning] = useState("");
   const [lifeOption, setLifeOption] = useState("single");
 
   useEffect (() => {
@@ -32,6 +33,22 @@ export default function Annuity() {
     setIncome(estimatedIncome.toFixed(2));
   }, [currentAge, incomeAge, premium, lifeOption]);
 
+  const handlePremiumChange = (e) => {
+    const value = e.target.value;
+    if (value === "") {
+      setPremium("")
+      setPremiumWarning("")
+      return
+    }
+    const premium = Number(value);
+    if (premium < 25000 || premium > 1000000) {
+      setPremiumWarning("Premium must be between 25,000 and 1,000,000");
+    } else {
+      setPremiumWarning("")
+    }
+    setPremium(premium);
+  };
+
   const handleCurrentAgeChange = (e) => {
     const value = e.target.value;
     if (value === "") {
@@ -40,8 +57,8 @@ export default function Annuity() {
       return
     }
     const age = Number(value);
-    if (age < 40 || age > 79) {
-      setCurrentAgeWarning("Current age must be between 40 and 79");
+    if (age < 44 || age > 80) {
+      setCurrentAgeWarning("Current age must be between 45 and 80");
     } else {
       setCurrentAgeWarning("")
     }
@@ -116,13 +133,11 @@ export default function Annuity() {
                   max={1000000}
                   step={100000}
                   className="pl-6"
-                  onChange={(e) => {
-                    const numericValue = Number(e.target.value);
-                    setPremium(numericValue);
-                  }}
+                  onChange={handlePremiumChange}
                 />
               </div>
             </div>
+            {premiumWarning && <p className="text-red-500 text-sm mt-1">{premiumWarning}</p>}
           </div>
           <div className="space-y-2">
             <label className="block text-sm font-medium text-gray-600">
@@ -155,7 +170,7 @@ export default function Annuity() {
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  ${premium.toLocaleString()}
+                  ${new Intl.NumberFormat('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(premium)}
                 </motion.h3>
                 <p className="text-lg text-gray-700">Estimated Yearly Income:</p>
                 <motion.h3
