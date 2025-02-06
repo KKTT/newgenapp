@@ -1,23 +1,27 @@
 import { Link, Outlet, useLocation } from "react-router-dom"
 import { buttonVariants } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 
 export default function App() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
       {isHomePage && (
         <header className="bg-white shadow-sm">
           <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-            <Card className="w-fit mx-auto my-4">
-              <CardContent className="flex justify-center gap-4 p-6">
+                <div className="flex justify-center mb-6">
+                  <img 
+                    src="/NEWGEN_Logo_Black.png" 
+                    alt="Newgen Logo" 
+                    className="w-90 h-32 object-contain"
+                  />
+                </div>
                 <Link 
                   to="/annuity" 
                   className={buttonVariants({ 
                     variant: "ghost",
-                    className: "w-full p-2 bg-green-600 text-white rounded-md hover:bg-green-700"
+                    className: "w-full p-2 mb-4 bg-green-600 text-white rounded-md hover:bg-green-700"
                   })}
                 >
                   Annuity Calculator
@@ -31,8 +35,6 @@ export default function App() {
                 >
                   IUL Calculator
                 </Link>
-              </CardContent>
-            </Card>
           </div>
         </header>
       )}

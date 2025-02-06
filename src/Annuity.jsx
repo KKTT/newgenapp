@@ -42,7 +42,7 @@ export default function Annuity() {
     }
     const premium = Number(value);
     if (premium < 25000 || premium > 1000000) {
-      setPremiumWarning("Premium must be between 25,000 and 1,000,000");
+      setPremiumWarning("Premium must be between $25,000 and $1,000,000");
     } else {
       setPremiumWarning("")
     }
@@ -74,7 +74,7 @@ export default function Annuity() {
     }
     const age = Number(value);
     if (age < currentAge || age < 55) {
-      setInomeAgeWarning("Please enter a number equal to or greater than your current age and 55");
+      setInomeAgeWarning("Income start age must be equal to or greater than your current age and 55");
     } else {
       setInomeAgeWarning("")
     }
@@ -89,6 +89,13 @@ export default function Annuity() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
+        <div className="flex justify-center mb-6">
+          <img 
+            src="/NEWGEN_Logo_Black.png" 
+            alt="Newgen Logo" 
+            className="w-90 h-32 object-contain"
+          />
+        </div>
         <h2 className="text-2xl font-bold text-gray-800 text-center mb-4">
           Lifetime Income Calculator
         </h2>
