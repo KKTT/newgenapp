@@ -82,18 +82,18 @@ export default function Annuity() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-1">
       <motion.div
         className="w-full max-w-md p-6 bg-white rounded-xl shadow-md"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center">
           <img 
             src="/NEWGEN_Logo_Black.png" 
             alt="Newgen Logo" 
-            className="w-90 h-32 object-contain"
+            className="w-70 h-32 object-contain"
           />
         </div>
         <h2 className="text-2xl font-bold text-gray-800 text-center mb-4">
