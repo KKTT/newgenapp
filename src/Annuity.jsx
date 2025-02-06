@@ -82,7 +82,7 @@ export default function Annuity() {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-100 p-6 mt-4">
+    <div className="flex flex-col items-center min-h-screen bg-gray-100 px-1 mt-1">
       <motion.div
         className="w-full max-w-md p-6 bg-white rounded-xl shadow-md"
         initial={{ opacity: 0, y: -20 }}
